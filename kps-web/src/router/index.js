@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
 import Home from '@/views/Home'
-import SideMenu from "../components/SideMenu";
+import ArticleManage from "../views/article/ArticleManage";
+
 Vue.use(Router)
 
 export default new Router({
@@ -18,9 +19,21 @@ export default new Router({
       component: Home
     },
     {
-      path: '/sideMenu',
-      name: 'SideMenu',
-      component: SideMenu
+      path: '/article',
+      name: 'article',
+      component: Home,
+      children: [
+        {
+          path: 'list',
+          name: 'list',
+          meta: {
+            icon: 'ios-paper',
+            title: '字典维护',
+            code: 'system-manage-dict'
+          },
+          component: ArticleManage
+        }
+      ]
     }
   ]
 })

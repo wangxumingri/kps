@@ -53,6 +53,10 @@
           this.$refs[name].validate((valid) => {
             if (valid) {
               this.$Message.success('Success!');
+              this.$refs[name].resetFields();
+              this.$router.push({
+                path: "/home"
+              })
             } else {
               this.$Message.error('Fail!');
             }
