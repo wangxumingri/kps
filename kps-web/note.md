@@ -1,4 +1,7 @@
+# 参考
 
+* https://blog.csdn.net/linzhefeng89/article/details/90287273
+* https://blog.csdn.net/linzhefeng89/article/details/90287273
 ## 配置i18n
 
 修改`main.js`
