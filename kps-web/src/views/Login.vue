@@ -26,6 +26,8 @@
 </template>
 
 <script>
+  import {login} from "../api/user/user.api"
+
     export default {
         name: "Login",
         data(){
@@ -52,10 +54,14 @@
         handleSubmit(name){
           this.$refs[name].validate((valid) => {
             if (valid) {
-              this.$Message.success('Success!');
-              this.$refs[name].resetFields();
-              this.$router.push({
-                path: "/home"
+              login(this.formData).then(res=>{
+                this.$Message.success('Success!');
+                this.$refs[name].resetFields();
+                this.$router.push({
+                  path: "/home"
+                })
+              }).catch(err=>{
+                this.$Message.error('err!');
               })
             } else {
               this.$Message.error('Fail!');
