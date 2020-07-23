@@ -27,6 +27,7 @@
 
 <script>
   import {login} from "../api/user/user.api"
+  import UserService from "../api/user/user.service"
 
     export default {
         name: "Login",
@@ -54,7 +55,7 @@
         handleSubmit(name){
           this.$refs[name].validate((valid) => {
             if (valid) {
-              login(this.formData).then(res=>{
+              UserService.login(this.formData).then(res=>{
                 this.$Message.success('Success!');
                 this.$refs[name].resetFields();
                 this.$router.push({

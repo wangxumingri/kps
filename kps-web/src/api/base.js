@@ -1,5 +1,4 @@
 import axios from '../lib/api.request';
-import qs from 'qs';
 
 // 通用的远程访问的方法
 export function fetch(url, params = {}) {

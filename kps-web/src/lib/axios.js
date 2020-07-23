@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import {Message} from 'iview';
 import EnvConfig from '../config/run.config';
+import {AjaxReturnStatus,AjaxReturnType,AjaxRequestPrefix} from "../data/data.ajax";
 
 class HttpRequest {
 
